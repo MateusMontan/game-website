@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <title>Jogos</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/1729/1729414.png">
+</head>
+
+<body>
+  <div class="menu-fixed">
+    <img class="logo" src="https://cdn-icons-png.flaticon.com/512/1729/1729414.png">
+    <div class="sub-menu">
+      <p>MENU</p>
+      <p>COMUNIDADE</p>
+      <p>PERFIL</p>
+      <p>SUPORTE</p>
+    </div>
+  </div>
+  <div class="filter-wrapper">
+    <button id="button-reset-filter" class="btn-inicio">Inicio</button>
+    <div class="dropdown">
+      <button id="resorce" class="dropbtn">Categorias</button>
+      <div class="dropdown-content">
+        <button id="acao-btn" class="categorias-drop" value="Ação">Ação</button>
+        <button id="aventura-btn" class="categorias-drop">Aventura</button>
+        <button id="casual-btn" class="categorias-drop">Casual</button>
+        <button id="corrida-btn" class="categorias-drop">Corrida</button>
+        <button id="moba-btn" class="categorias-drop">MOBA</button>
+        <button id="rpg-btn" class="categorias-drop">RPG</button>
+        <button id="sobrevivencia-btn" class="categorias-drop">Sobrevivencia</button>
+        <button id="tanques-btn" class="categorias-drop">Tanques</button>
+        <button id="terror-btn" class="categorias-drop">Terror</button>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button id="resorce" class="dropbtn">Analises</button>
+      <div class="dropdown-content analise">
+        <button id="positiva-btn" class="categorias-drop">Positivas</button>
+        <button id="neutra-btn" class="categorias-drop">Neutras</button>
+        <button id="negativas-btn" class="categorias-drop">Negativas</button>
+      </div>
+    </div>
+    <div style="display:flex; align-items: center;">
+      <input type="text" id="textSearch" placeholder="Digite o nome do Jogo">
+      <button id="btn-search" class="btn-search"><img style="width: 10px;" src="https://cdn-icons-png.flaticon.com/512/151/151773.png"></button>
+    </div>
+    <div class="preco-info">
+      <div style="display: flex; flex-direction:column; align-items: center;">
+        <input id="valueIdRange" type="range" value="500" min="0" max="500">
+        <p id="valueTxtRange" style="margin: 0px;" id="output">Por até R$ 500,00</p>
+      </div>
+    </div>
+    <div class="vlz-info">
+      <button id="style-linha"><img style="width: 10px;" src="https://cdn-icons-png.flaticon.com/512/2326/2326138.png"></button>
+      <button id="style-coluna"><img style="width: 10px;" src="https://cdn-icons-png.flaticon.com/512/847/847581.png"></button>
+    </div>
+  </div>
+  <div id="root"></div>
+  <script src="./scripts/index.js" type="module"></script>
+</body>
+
+</html>
