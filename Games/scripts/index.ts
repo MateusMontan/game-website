@@ -22,6 +22,7 @@ let lastGeneroSelect = "none";
 let lastAnalise = "none";
 let price = (valueRangeElement as HTMLInputElement).value;
 let style = "coluna";
+let lastJogosRender = Jogos;
 
 
 
@@ -39,6 +40,7 @@ const textPriceElement = document.querySelector("#text-price");
 let resorceElement = document.querySelector("#resorce");
 
 function render(itens: Jogo[]) {
+  lastJogosRender = itens;
   if (rootElement) {
     let constSubRoot = document.querySelector("#sub-root-coluna");
     if (style == "coluna") {
@@ -138,7 +140,7 @@ function render(itens: Jogo[]) {
 render(Jogos);
 
 //Constantes associadas a cada 'button' no 'dropmenu' das categorias
-const textSearh = document.querySelector("#textSearch");
+const textSearch = document.querySelector("#textSearch");
 const ButtonSearch = document.querySelector('#btn-search');
 const ButtonAcao = document.querySelector("#acao-btn");
 const ButtonAventura = document.querySelector("#aventura-btn");
@@ -177,9 +179,11 @@ function eventListener() {
 
 function changeValueLinha() {
   style = "linha";
+  render(lastJogosRender);
 }
 function changeValueColuna() {
   style = "coluna";
+  render(lastJogosRender);
 }
 
 function resetSearch() {
@@ -272,9 +276,7 @@ function eventChange() {
 }
 
 function renderSearch() {
-  let txt = (textSearh as HTMLInputElement).value;
-  let txtUpper = txt.toUpperCase();
-  let txtLow = txt.toLowerCase();
-  let newJogos = Jogos.filter((items) => (items.nome.includes(txtUpper) || items.nome.includes(txtLow) || items.nome.includes(txt)));
+  let txt = (textSearch as HTMLInputElement).value;
+  let newJogos = Jogos.filter((items) => (items.nome.toUpperCase == txt.toUpperCase));
   render(newJogos);
 }

@@ -19,6 +19,7 @@ let lastGeneroSelect = "none";
 let lastAnalise = "none";
 let price = valueRangeElement.value;
 let style = "coluna";
+let lastJogosRender = Jogos;
 const rootElement = document.querySelector("#root");
 const searchInputElement = document.querySelector("#input-pesquisar");
 const searchTypeElement = document.querySelector("#filter-type-select");
@@ -28,6 +29,7 @@ const rangePriceElement = document.querySelector("#rangePrice");
 const textPriceElement = document.querySelector("#text-price");
 let resorceElement = document.querySelector("#resorce");
 function render(itens) {
+    lastJogosRender = itens;
     if (rootElement) {
         let constSubRoot = document.querySelector("#sub-root-coluna");
         if (style == "coluna") {
@@ -127,7 +129,7 @@ function render(itens) {
 }
 render(Jogos);
 //Constantes associadas a cada 'button' no 'dropmenu' das categorias
-const textSearh = document.querySelector("#textSearch");
+const textSearch = document.querySelector("#textSearch");
 const ButtonSearch = document.querySelector('#btn-search');
 const ButtonAcao = document.querySelector("#acao-btn");
 const ButtonAventura = document.querySelector("#aventura-btn");
@@ -164,9 +166,11 @@ function eventListener() {
 }
 function changeValueLinha() {
     style = "linha";
+    render(lastJogosRender);
 }
 function changeValueColuna() {
     style = "coluna";
+    render(lastJogosRender);
 }
 function resetSearch() {
     lastGeneroSelect = "none";
@@ -251,9 +255,7 @@ function eventChange() {
     });
 }
 function renderSearch() {
-    let txt = textSearh.value;
-    let txtUpper = txt.toUpperCase();
-    let txtLow = txt.toLowerCase();
-    let newJogos = Jogos.filter((items) => (items.nome.includes(txtUpper) || items.nome.includes(txtLow) || items.nome.includes(txt)));
+    let txt = textSearch.value;
+    let newJogos = Jogos.filter((items) => (items.nome.toUpperCase == txt.toUpperCase));
     render(newJogos);
 }
