@@ -5,7 +5,7 @@
   margin: 20px 50px 50px 50px;
   justify-content: center;
   text-align: center;
-  font-family: "Motiva Sans";
+  font-family:"Gill Sans", sans-serif;
 }
 #sub-root-linha {
   display: grid;
@@ -15,8 +15,8 @@
   padding-top: 15px;
   padding-bottom: 15px;
   justify-content: center;
-  text-align: center;
-  font-family: "Motiva Sans";
+  text-align: baseline;
+  font-family:"Gill Sans", sans-serif;
 }
 
 .title-linha{
@@ -96,7 +96,7 @@ body {
   background-color: rgba(26, 43, 58, 1);
   margin: 0;
   padding: 0;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family:"Gill Sans", sans-serif;
   min-height: 700px;
 }
 
