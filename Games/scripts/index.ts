@@ -277,6 +277,6 @@ function eventChange() {
 
 function renderSearch() {
   let txt = (textSearch as HTMLInputElement).value;
-  let newJogos = Jogos.filter((items) => (items.nome.toUpperCase == txt.toUpperCase));
+  let newJogos = Jogos.filter(((items) => (items.nome.toUpperCase().includes(txt.toUpperCase()))));
   render(newJogos);
 }
