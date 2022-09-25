@@ -1,7 +1,8 @@
 .sombra-background{
   background-color: rgba(39, 54, 68, 0.96);
   height: 100%;
-padding-top: 10px;
+  min-height: 570px;
+  padding-top: 10px;
 }
 #sub-root-coluna {
   display: grid;
@@ -107,7 +108,7 @@ body {
 }
 
 .item-wrapper-linha{
-  background-image: linear-gradient(to right, rgb(70, 112, 146) , rgb(41, 41, 38));
+  background-image: linear-gradient(to right, rgb(68, 132, 184) ,rgb(54, 77, 95), rgb(0, 0, 0));
   color: white;
   display: flex;
   justify-content:baseline;
@@ -127,7 +128,7 @@ body {
 }
 
 .item-wrapper-coluna {
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(78, 78, 78));
+  background-image: linear-gradient(rgb(68, 132, 184) ,rgb(54, 77, 95), rgb(0, 0, 0));
   color: white;
   display: flex;
   justify-content:flex-start;
@@ -214,6 +215,14 @@ body {
   display: flex;
   gap: 35px;  
   flex-direction: row;
+
+}
+
+.sub-menu > a {
+  display: flex;
+  gap: 35px;  
+  flex-direction: row;
+  
 }
 
 .logo{

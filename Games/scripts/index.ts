@@ -40,7 +40,6 @@ const textPriceElement = document.querySelector("#text-price");
 let resorceElement = document.querySelector("#resorce");
 
 function render(itens: Jogo[]) {
-  lastJogosRender = itens;
   if (rootElement) {
     let constSubRoot = document.querySelector("#sub-root-coluna");
     if (style == "coluna") {
@@ -188,45 +187,55 @@ function changeValueColuna() {
 
 function resetSearch() {
   lastGeneroSelect = "none";
+  lastJogosRender = Jogos;
   render(Jogos);
 }
 
 function renderAcao() {
-  render(Jogos.filter((items) => ((items.genero.includes("Ação")) && (items.preco <= (parseInt(price))))));
+  
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("Ação")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "Ação";
 }
 function renderAventura() {
-  render(Jogos.filter((items) => ((items.genero.includes("Aventura")) && (items.preco <= (parseInt(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("Aventura")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "Aventura";
 }
 function renderCasual() {
-  render(Jogos.filter((items) => ((items.genero.includes("Casual")) && (items.preco <= (parseInt(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("Casual")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "Casual";
 }
 function renderCorrida() {
-  render(Jogos.filter((items) => ((items.genero.includes("Corrida")) && (items.preco <= (parseInt(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("Corrida")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "Corrida";
 }
 function renderMOBA() {
-  render(Jogos.filter((items) => ((items.genero.includes("MOBA")) && (items.preco <= (parseInt(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("MOBA")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "MOBA";
 }
 function renderRPG() {
-  render(Jogos.filter((items) => ((items.genero.includes("RPG")) && (items.preco <= (parseInt(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("RPG")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "RPG";
 }
 function renderSobrevivencia() {
-  render(Jogos.filter((items) => ((items.genero.includes("Sobrevivencia")) && (items.preco <= (parseInt(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("Sobrevivencia")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "Sobrevivencia";
 }
 function renderTanques() {
-  render(Jogos.filter((items) => ((items.genero.includes("Tanques")) && (items.preco <= (parseInt(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("Tanques")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "Tanques";
 }
 function renderTerror() {
+  lastJogosRender = Jogos.filter((items) => ((items.genero.includes("Terror")) && (items.preco <= (parseInt(price)))));
+  render(lastJogosRender);
   lastGeneroSelect = "Terror";
-  console.log(price);
-  render(Jogos.filter((items) => ((items.genero.includes("Terror")) && (items.preco <= (parseInt(price))))));
 }
 
 
@@ -238,15 +247,18 @@ eventChange();
 
 function renderPositiva() {
   lastGeneroSelect = "Positiva";
-  render(Jogos.filter((items) => ((items.analise == "Positiva") && (items.preco <= (parseFloat(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.analise == "Positiva") && (items.preco <= (parseFloat(price)))));
+  render(lastJogosRender);
 }
 function renderNeutra() {
   lastGeneroSelect = "Neutra";
-  render(Jogos.filter((items) => ((items.analise == "Neutra") && (items.preco <= (parseFloat(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.analise == "Neutra") && (items.preco <= (parseFloat(price)))));
+  render(lastJogosRender);
 }
 function renderNegativa() {
   lastGeneroSelect = "Negativa";
-  render(Jogos.filter((items) => ((items.analise == "Negativa") && (items.preco <= (parseFloat(price))))));
+  lastJogosRender = Jogos.filter((items) => ((items.analise == "Negativa") && (items.preco <= (parseFloat(price)))));
+  render(lastJogosRender);
 }
 
 function renderByPriceByLastButton(price: string) {
@@ -256,8 +268,6 @@ function renderByPriceByLastButton(price: string) {
   } else if (lastGeneroSelect == "Positiva" || lastGeneroSelect == "Negativa" || lastGeneroSelect == "Neutra") {
     newJogos = Jogos.filter((items) => ((items.preco <= (parseInt(price))) && (items.analise.includes(lastGeneroSelect))));
   } else {
-    console.log(lastGeneroSelect);
-    console.log(price);
     newJogos = Jogos.filter((items) => ((items.preco <= (parseInt(price))) && (items.genero.includes(lastGeneroSelect))));
   }
   render(newJogos);
@@ -277,6 +287,6 @@ function eventChange() {
 
 function renderSearch() {
   let txt = (textSearch as HTMLInputElement).value;
-  let newJogos = Jogos.filter(((items) => (items.nome.toUpperCase().includes(txt.toUpperCase()))));
+  let newJogos = lastJogosRender.filter(((items) => (items.nome.toUpperCase().includes(txt.toUpperCase()))));
   render(newJogos);
 }
