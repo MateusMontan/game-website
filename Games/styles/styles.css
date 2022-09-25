@@ -107,7 +107,7 @@ body {
 }
 
 .item-wrapper-linha{
-  background-color:#313e47;
+  background-image: linear-gradient(to right, rgb(70, 112, 146) , rgb(41, 41, 38));
   color: white;
   display: flex;
   justify-content:baseline;
