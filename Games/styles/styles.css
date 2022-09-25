@@ -1,3 +1,8 @@
+.sombra-background{
+  background-color: rgba(39, 54, 68, 0.98);
+  height: 100%;
+padding-top: 10px;
+}
 #sub-root-coluna {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
@@ -93,7 +98,7 @@
 }
 
 body {
-  background-color: rgba(26, 43, 58, 1);
+  background-image: url("https://img.freepik.com/premium-vector/video-game-controller-seamless-pattern_615746-89.jpg?w=2000");
   margin: 0;
   padding: 0;
   font-family:"Gill Sans", sans-serif;
@@ -101,7 +106,6 @@ body {
 }
 
 .item-wrapper-linha{
-  background-color: #313e47;
   color: white;
   display: flex;
   justify-content:baseline;
@@ -198,7 +202,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0% 20%;
-  margin-bottom: 10px;
   height: 135px;
   width: 60%;
   background-color: #171A21;
@@ -213,7 +216,7 @@ body {
 
 .logo{
   color: white;
-  width: 105px;
+  width: 130px;
 }
 
 .preco-info{
