@@ -1,5 +1,5 @@
 .sombra-background{
-  background-color: rgba(39, 54, 68, 0.98);
+  background-color: rgba(39, 54, 68, 0.96);
   height: 100%;
 padding-top: 10px;
 }
@@ -107,6 +107,7 @@ body {
 }
 
 .item-wrapper-linha{
+  background-color:#313e47;
   color: white;
   display: flex;
   justify-content:baseline;
