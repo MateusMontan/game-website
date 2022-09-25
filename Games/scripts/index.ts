@@ -139,11 +139,11 @@ function render(itens: Jogo[]) {
 
 render(Jogos);
 
-//Constantes associadas a cada 'button' no 'dropmenu' das categorias
 const textSearch = document.querySelector("#textSearch");
 const ButtonSearch = document.querySelector('#btn-search');
 const ButtonAcao = document.querySelector("#acao-btn");
 const ButtonAventura = document.querySelector("#aventura-btn");
+const ButtonCasual= document.querySelector("#casual-btn");
 const ButtonCorrida = document.querySelector("#corrida-btn");
 const ButtonMoba = document.querySelector("#moba-btn");
 const ButtonRPG = document.querySelector("#rpg-btn");
@@ -174,6 +174,7 @@ function eventListener() {
   (ButtonSearch as HTMLButtonElement)?.addEventListener("click", renderSearch);
   (ButtonStyleLinha as HTMLButtonElement)?.addEventListener("click", changeValueLinha);
   (ButtonStyleColuna as HTMLButtonElement)?.addEventListener("click", changeValueColuna);
+  (textSearch as HTMLInputElement)?.addEventListener("change", renderSearch);
 }
 
 function changeValueLinha() {

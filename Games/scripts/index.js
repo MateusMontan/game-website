@@ -128,7 +128,6 @@ function render(itens) {
     }
 }
 render(Jogos);
-//Constantes associadas a cada 'button' no 'dropmenu' das categorias
 const textSearch = document.querySelector("#textSearch");
 const ButtonSearch = document.querySelector('#btn-search');
 const ButtonAcao = document.querySelector("#acao-btn");
@@ -163,6 +162,7 @@ function eventListener() {
     ButtonSearch === null || ButtonSearch === void 0 ? void 0 : ButtonSearch.addEventListener("click", renderSearch);
     ButtonStyleLinha === null || ButtonStyleLinha === void 0 ? void 0 : ButtonStyleLinha.addEventListener("click", changeValueLinha);
     ButtonStyleColuna === null || ButtonStyleColuna === void 0 ? void 0 : ButtonStyleColuna.addEventListener("click", changeValueColuna);
+    textSearch === null || textSearch === void 0 ? void 0 : textSearch.addEventListener("change", renderSearch);
 }
 function changeValueLinha() {
     style = "linha";
