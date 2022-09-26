@@ -1,5 +1,5 @@
-# Steam
- A page with CSS, HTML and Typescript
+# Games
+ Uma página em formato de loja com os jogos disponíveis. A página foi feita com HTML, CSS e Typescript.
 
 # Botões
  Botão 'Inicio', reseta as configurações de filtro ('Categoria', 'Analise', 'Search por Input').
