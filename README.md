@@ -8,7 +8,10 @@
 
  Botão 'Analise' filtra o array de objetos 'Jogos', pela analise selecionada.
  
- Botões localizados no fim do 'filter-wrapper', são responsáveis por mudar o estilo do grid. (Para testar será necessário apertar nele e dps apertar em algum modo de filtragem), não tive tempo mas já tenho na mente a maneira de mudar isso para a forma correta.
+ Botões localizados no fim do 'filter-wrapper', são responsáveis por mudar o estilo do grid.
  
 # Range
  Input range é responsável por filtrar o array de objetos 'Jogos' limitando o preço.
+ 
+# Menu-fixed
+ Coloquei menu com a logo e alguns parágrafos apenas pelo design do site.
